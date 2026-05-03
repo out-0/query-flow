@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "query-flow"
+version = "0.1.0"
+description = "Information Retrieval system with hybrid search routing"
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "httpx>=0.24.0",
+    "beautifulsoup4>=4.12.0",
+    "trafilatura>=1.6.0",
+    "lxml-html-clean>=0.4.0",
+]
