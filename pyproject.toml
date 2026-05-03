@@ -19,6 +19,7 @@ dependencies = [
 [tool.setuptools]
 py-modules = [
     "app",
+    "config",
     "LocalSearXNGProvider",
     "PublicSearXNGProviderPool",
     "fetch_layer",
