@@ -15,6 +15,7 @@ Usage:
 
 import httpx
 from bs4 import BeautifulSoup
+from config import LOCAL_INSTANCE_URL
 
 
 def send_request(query: str):
@@ -41,8 +42,8 @@ def send_request(query: str):
         >>> for result in results:
         ...     print(f"{result['title']}: {result['url']}")
     """
-    # SearXNG endpoint URL (default port 8080)
-    url = "http://localhost:8080/search"
+    # SearXNG endpoint URL (from config)
+    url = LOCAL_INSTANCE_URL
 
     # Make HTTP GET request with search query parameter
     r = httpx.get(url, params={"q": query})
