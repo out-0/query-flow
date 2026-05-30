@@ -47,8 +47,8 @@ def search_with_routing(query: str):
 
 
 if __name__ == '__main__':
-    # Get user query (hardcoded for demo)
-    query = "python programming"
+
+    query = input("Search for: ")
     print(f"🔍 Searching for: {query}")
 
     # Search with routing
@@ -59,10 +59,12 @@ if __name__ == '__main__':
         exit()
 
     # Full pipeline using separate modules
-    raw_html_pages: List[Optional[str]] = fetch_results(results)  # Returns: List[raw HTML or None]
-    documents: List[Optional[str]] = extract_data(raw_html_pages)  # Returns: List[extracted text or None]
-    filtered_documents: List[str] = filter_documents(documents)  # Returns: List[valid text content]
-    ranked_documents: List[Dict[str, Any]] = rank_documents(query, filtered_documents)  # Returns: List[{"score": float, "content": str, ...}]
-    #output_documents(ranked_documents)
-    #print(ranked_documents[0]["content"])
-    
+    raw_html_pages: List[str] = fetch_results(results)
+    documents = extract_data(raw_html_pages)
+    filtered_documents = filter_documents(documents)
+
+    # Returns: List[{"score": float, "content": str, ...}]
+    ranked_documents: List[Dict[str, Any]] = rank_documents(query, filtered_documents)
+    output_documents(ranked_documents)
+    print(ranked_documents[0]["content"])
+
