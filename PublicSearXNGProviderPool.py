@@ -27,7 +27,7 @@ class SearXNGProvider:
     """Base class for SearXNG providers."""
 
     def __init__(self, url: str):
-        self.url = url
+        self.url = url.rstrip('/')
 
     def search(self, query: str) -> Tuple[List[Dict], float]:
         """
