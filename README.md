@@ -54,6 +54,8 @@ ranking_layer (score relevance)
 output_layer (display results)
 ```
 
+# 📋 Prerequisites
+
 Before running, ensure you have the following installed:
 - **Docker & Docker Compose**: To run the local SearXNG instance.
 - **Python 3.10+**: The core application language.
@@ -229,6 +231,13 @@ Because:
 - raw web data needs processing
 
 So this pipeline sits in the middle.
+
+---
+
+# 🚀 Performance Tip
+
+Since the current version uses **sequential fetching**, performance depends on the number of results.
+If the pipeline feels slow, you can adjust `MAX_SEARCH_RESULTS` in `config.py` to a lower value (e.g., `3` or `5`) for a much faster response.
 
 ---
 
