@@ -234,13 +234,6 @@ So this pipeline sits in the middle.
 
 ---
 
-# 🚀 Performance Tip
-
-Since the current version uses **sequential fetching**, performance depends on the number of results.
-If the pipeline feels slow, you can adjust `MAX_SEARCH_RESULTS` in `config.py` to a lower value (e.g., `3` or `5`) for a much faster response.
-
----
-
 # 🧪 What it teaches
 
 - search engine basics
